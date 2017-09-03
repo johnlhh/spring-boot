@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FilterConfiguration {
     @Bean
-    public FilterRegistrationBean filterDemo4Registration() {
+    public FilterRegistrationBean filterCORSRegistration() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         //注入过滤器
         registration.setFilter(new CORSFilter());
