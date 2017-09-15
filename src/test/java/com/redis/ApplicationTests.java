@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by luohuahua on 17/8/5.
  */
@@ -36,4 +40,19 @@ public class ApplicationTests {
         template.opsForValue().set("aaa", "111");
         Assert.assertEquals("111", template.opsForValue().get("aaa"));
     }*/
+
+    private void test() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Collections.EMPTY_LIST.add(1));
+        System.out.println();
+        System.out.println();
+        Map<String, String> map = new HashMap<>();
+
+    }
 }
