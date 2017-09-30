@@ -47,8 +47,8 @@ public class RemoteServiceTest {
         String name = service.getOwner("helloworld");
         System.out.println(name);*/
 
-        Map<String,SingleAssignRequest> result = service.map();
-        System.out.println(result);
+        //Map<String,SingleAssignRequest> result = service.map();
+        //System.out.println(result);
     }
 
 }

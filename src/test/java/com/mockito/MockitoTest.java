@@ -36,7 +36,7 @@ public class MockitoTest {
         // stubbing appears before the actual execution
         when(mockedList.get(0)).thenReturn("first");
 
-        when(mockedList.size()).thenThrow(new Exception("unsupport method"));
+       // when(mockedList.size()).thenThrow(new Exception("unsupport method"));
         // the following prints "first"
         System.out.println(mockedList.get(0));
 
