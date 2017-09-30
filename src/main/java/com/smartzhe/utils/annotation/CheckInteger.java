@@ -1,6 +1,6 @@
 package com.smartzhe.utils.annotation;
 
-import com.smartzhe.utils.annotation.validator.CheckStringValidator;
+import com.smartzhe.utils.annotation.validator.CheckIntegerValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -9,28 +9,21 @@ import java.lang.annotation.*;
 /**
  * Created by IntelliJ IDEA.
  * User: luohuahua
- * Date: 2017/9/12
- * Time: 14:30  .
+ * Date: 2017/9/25
+ * Time: 13:42  .
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
-@Constraint(validatedBy = CheckStringValidator.class)
+@Constraint(validatedBy = CheckIntegerValidator.class)
 @Documented
-public @interface CheckString {
-    /**
-     * error msg
-     *
-     * @return
-     */
-    String message() default "字符串不能为空";
+public @interface CheckInteger {
 
-    int minLength() default -1;
+    String message() default "";
 
-    int maxLength() default -1;
 
-    boolean isNeedPattern() default false;
+    String rangeFromTo() default "";
 
-    String pattern() default "";
+    String rangeIn() default "";
 
     /**
      * error code
@@ -40,5 +33,4 @@ public @interface CheckString {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
 }

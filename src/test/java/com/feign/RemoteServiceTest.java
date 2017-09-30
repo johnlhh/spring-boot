@@ -1,6 +1,8 @@
 package com.feign;
 
 import com.smartzhe.entity.User;
+import com.smartzhe.model.CouponAssignEntity;
+import com.smartzhe.model.SingleAssignRequest;
 import com.smartzhe.service.RemoteService;
 import feign.Feign;
 import feign.Request;
@@ -8,6 +10,9 @@ import feign.Retryer;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import org.junit.Test;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,13 +38,17 @@ public class RemoteServiceTest {
         result = service.getPostOwner("Kent");
         System.out.println(result);*/
 
-        User user = new User();
+      /*  User user = new User();
         user.setName("John");
         user.setId(1);
         User user1 = service.getOwner(user);
         System.out.println(user1.getName());
 
         String name = service.getOwner("helloworld");
-        System.out.println(name);
+        System.out.println(name);*/
+
+        Map<String,SingleAssignRequest> result = service.map();
+        System.out.println(result);
     }
+
 }

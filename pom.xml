@@ -19,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <env.type>develop</env.type>
         <feign.version>9.5.0</feign.version>
+        <jodatime.version>2.9.9</jodatime.version>
     </properties>
 
     <profiles>
@@ -105,6 +106,12 @@
             <version>${jackson.version}</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -203,6 +210,12 @@
             <groupId>com.netflix.feign</groupId>
             <artifactId>feign-jackson</artifactId>
             <version>8.18.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodatime.version}</version>
         </dependency>
 
     </dependencies>
