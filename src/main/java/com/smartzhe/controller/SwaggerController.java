@@ -42,9 +42,10 @@ public class SwaggerController {
         return "success";
     }
 
-    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
-    @RequestMapping(value="/users/{id}", method=RequestMethod.GET)
+
+    @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true)
+    @RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
         return new User();
     }

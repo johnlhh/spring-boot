@@ -4,24 +4,11 @@ package com.smartzhe.controller;
  * Created by luohuahua on 17/6/16.
  */
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.smartzhe.core.datasource.dynic.TargetDataSource;
 import com.smartzhe.entity.User;
-
-import com.smartzhe.entity.UserExample;
-import com.smartzhe.service.IUserService;
-import io.swagger.annotations.ApiOperation;
-import lombok.Data;
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在/users下，可去除
