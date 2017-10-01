@@ -1,5 +1,6 @@
 package com.smartzhe.entity;
 
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -49,7 +50,6 @@ public class User {
      * This method returns the value of the database column user.id
      *
      * @return the value of user.id
-     *
      * @mbggenerated
      */
     public Integer getId() {
@@ -61,7 +61,6 @@ public class User {
      * This method sets the value of the database column user.id
      *
      * @param id the value for user.id
-     *
      * @mbggenerated
      */
     public void setId(Integer id) {
@@ -73,7 +72,6 @@ public class User {
      * This method returns the value of the database column user.name
      *
      * @return the value of user.name
-     *
      * @mbggenerated
      */
     public String getName() {
@@ -85,7 +83,6 @@ public class User {
      * This method sets the value of the database column user.name
      *
      * @param name the value for user.name
-     *
      * @mbggenerated
      */
     public void setName(String name) {
@@ -97,7 +94,6 @@ public class User {
      * This method returns the value of the database column user.birth_date
      *
      * @return the value of user.birth_date
-     *
      * @mbggenerated
      */
     public Date getBirthDate() {
@@ -109,7 +105,6 @@ public class User {
      * This method sets the value of the database column user.birth_date
      *
      * @param birthDate the value for user.birth_date
-     *
      * @mbggenerated
      */
     public void setBirthDate(Date birthDate) {
@@ -121,7 +116,6 @@ public class User {
      * This method returns the value of the database column user.passwd
      *
      * @return the value of user.passwd
-     *
      * @mbggenerated
      */
     public String getPasswd() {
@@ -133,7 +127,6 @@ public class User {
      * This method sets the value of the database column user.passwd
      *
      * @param passwd the value for user.passwd
-     *
      * @mbggenerated
      */
     public void setPasswd(String passwd) {
@@ -145,7 +138,6 @@ public class User {
      * This method returns the value of the database column user.amount
      *
      * @return the value of user.amount
-     *
      * @mbggenerated
      */
     public BigDecimal getAmount() {
@@ -157,10 +149,10 @@ public class User {
      * This method sets the value of the database column user.amount
      *
      * @param amount the value for user.amount
-     *
      * @mbggenerated
      */
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
+
 }
