@@ -15,8 +15,8 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements IUserService {
 
-    @Autowired
-    private UserMapper userMapper;
+   /* @Autowired
+    //private UserMapper userMapper;
 
     @Override
     public void addUser(User user) {
@@ -42,5 +42,5 @@ public class UserServiceImpl implements IUserService {
     public List<User> querUsers(UserExample example) {
 
         return userMapper.selectByExample(example);
-    }
+    }*/
 }

@@ -7,7 +7,7 @@
 
     <!-- <classPathEntry> 加载运行时需要的jar或zip包 完整路径名称或要添加到类路径中的目录 最好放到类路径下，方便统一开发 -->
     <classPathEntry
-            location="/Users/luohuahua/.m2/repository/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar"/>
+            location="C:\\Users\\Administrator\\.m2\\repository\\mysql\\mysql-connector-java\\5.1.44\\mysql-connector-java-5.1.44.jar"/>
 
     <!-- <context> 元素用于指定生成一组对象的环境。 子元素用于指定要连接到的数据库、
          要生成对象的类型和要内省的表。 多个 <context> 元素可以在 <generatorConfiguration>
@@ -41,19 +41,24 @@
         <property name="endingDelimiter" value="`"/>
 
         <!-- 注释生成器 -->
-        <commentGenerator>
-            <!-- 当值为true时 将不生产相关的注释 -->
-            <property name="suppressAllComments" value="true"/>
-            <!-- 当值为true时 将不生产时间戳的注释 当有版本控制时，每次都要提交代码-->
+      <!--  <commentGenerator type="com.smartzhe.mybatis.MyCommentGenerator">
             <property name="suppressDate" value="true"/>
-        </commentGenerator>
+            <property name="suppressAllComments" value="false" />
+        </commentGenerator>-->
 
+        <commentGenerator
+                type="org.mybatis.generator.internal.CustomeCommentGenerator">
+            <property name="javaFileEncoding" value="UTF-8" />
+
+            <property name="suppressAllComments" value="false" />
+            <property name="suppressDate" value="false" />
+        </commentGenerator>
 
         <!-- jdbc数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/test"
-                        userId="root"
-                        password="root">
+                        connectionURL="jdbc:mysql://10.101.9.216:3306/jifenpay"
+                        userId="gatdevelop"
+                        password="CJ0WQCXQ1U">
         </jdbcConnection>
 
 
@@ -66,28 +71,85 @@
             如果设置为true，那么一定会使用java.math.BigDecimal
         -->
         <javaTypeResolver>
-            <property name="forceBigDecimals" value="true"/>
+
+
         </javaTypeResolver>
 
 
-        <javaModelGenerator targetPackage="com.smartzhe.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.smartzhe.jifenpay.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <!--<property name="trimStrings" value="true"/>-->
-            <property name="constructorBased" value="true"/>
+            <property name="constructorBased" value="false"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis.jifenpay.mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.smartzhe.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.smartzhe.jifenpay.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table schema="DB2ADMIN" tableName="user" domainObjectName="User">
+
+        <table schema="DB2ADMIN" tableName="OuterTrade" domainObjectName="OuterTrade"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"
+        >
+            <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="Mysql"/>
         </table>
 
+        <table schema="DB2ADMIN" tableName="ConsumeRecord" domainObjectName="ConsumeRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table schema="DB2ADMIN" tableName="ConsumeRecordSync" domainObjectName="ConsumeRecordSync"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+
+        <table schema="DB2ADMIN" tableName="ConsumeRecordPlus" domainObjectName="ConsumeRecordPlus"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+
+        <table schema="DB2ADMIN" tableName="ConsumeRefundRecord" domainObjectName="ConsumeRefundRecord"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+
+        <table schema="DB2ADMIN" tableName="PayNotify" domainObjectName="PayNotify"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+
+        <table schema="DB2ADMIN" tableName="PayTemp" domainObjectName="PayTemp"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
 
     </context>
 </generatorConfiguration>

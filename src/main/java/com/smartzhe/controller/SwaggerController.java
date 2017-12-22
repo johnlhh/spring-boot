@@ -21,7 +21,7 @@ public class SwaggerController {
     private IUserService userService;
 
     private static final String TAGS = "用户API";
-
+/*
     @ApiOperation(value = "获取用户列表", notes = "分页获取用户列表信息", tags = {TAGS})
     @RequestMapping(value = "/users/list", method = RequestMethod.GET)
     public PageInfo getUserList(@RequestParam(required = true) Integer toPage,
@@ -31,9 +31,9 @@ public class SwaggerController {
         UserExample example = new UserExample();
         PageInfo<User> pageInfo = new PageInfo<User>(userService.querUsers(example));
         return pageInfo;
-    }
+    }*/
 
-    @ApiOperation(value = "创建用户", notes = "根据User对象创建用户", tags = {TAGS})
+   /* @ApiOperation(value = "创建用户", notes = "根据User对象创建用户", tags = {TAGS})
     @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
     @RequestMapping(value = "/users/create", method = RequestMethod.POST)
     public String postUser(@RequestBody User user) {
@@ -66,7 +66,7 @@ public class SwaggerController {
     @RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)
     public String deleteUser(@PathVariable Long id) {
         return "success";
-    }
+    }*/
 
 
 }

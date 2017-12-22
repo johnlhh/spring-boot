@@ -20,6 +20,8 @@
         <env.type>develop</env.type>
         <feign.version>9.5.0</feign.version>
         <jodatime.version>2.9.9</jodatime.version>
+        <gconf.version>1.0.4</gconf.version>
+        <junit4.version>4.12</junit4.version>
     </properties>
 
     <profiles>
@@ -36,15 +38,41 @@
             </properties>
         </profile>
     </profiles>
-<!--aa-->
+    <!--aa-->
+
     <dependencies>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>2.4.1</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit4.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.gat</groupId>
+            <artifactId>gconf-client</artifactId>
+            <version>${gconf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gat</groupId>
+            <artifactId>gat-common</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${jodatime.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
@@ -150,56 +178,6 @@
         </dependency>
         <!-- Swagger  end   -->
 
-
-        <!-- <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-redis</artifactId>
-             <version>1.0.1.RELEASE</version>
-         </dependency>-->
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-redis</artifactId>
-        </dependency>-->
-
-        <!--<dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.8.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-okhttp</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-gson</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-jackson</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-slf4j</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign.form</groupId>
-            <artifactId>feign-form</artifactId>
-            <version>2.2.0</version>
-        </dependency>-->
-
         <dependency>
             <groupId>com.netflix.feign</groupId>
             <artifactId>feign-core</artifactId>
@@ -218,6 +196,17 @@
             <version>${jodatime.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.0.2.Final</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -263,10 +252,24 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.0</version>
+                <version>1.3.2</version>
+                <configuration>
+                    <configurationFile>
+                        ${basedir}/src/main/resources/generatorConfig.xml
+                    </configurationFile>
+                    <overwrite>true</overwrite>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.zhishi.mybatis</groupId>
+                        <artifactId>mybatis-generator-core</artifactId>
+                        <version>1.0.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

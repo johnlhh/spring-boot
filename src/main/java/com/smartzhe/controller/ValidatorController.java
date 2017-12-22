@@ -21,7 +21,7 @@ import java.util.Map;
 @RequestMapping(value = "/validator")
 public class ValidatorController {
 
-    @RequestMapping("/checkName")
+    /*@RequestMapping("/checkName")
     @ResponseBody
     public ApiResponse testCheckName(String name) {
 
@@ -59,7 +59,7 @@ public class ValidatorController {
         entity.setOuterAssignCode("sdfsfds");
 
         return entity;
-    }
+    }*/
 
 
 }

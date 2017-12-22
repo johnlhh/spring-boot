@@ -44,8 +44,8 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         Map<Object, Object> targetDataSources = new HashMap<Object, Object>();
         // 将主数据源添加到更多数据源中
-        targetDataSources.put("dataSource", defaultDataSource);
-        DynamicDataSourceContextHolder.dataSourceIds.add("dataSource");
+        targetDataSources.put("master", defaultDataSource);
+        DynamicDataSourceContextHolder.dataSourceIds.add("master");
         // 添加更多数据源
         targetDataSources.putAll(customDataSources);
         for (String key : customDataSources.keySet()) {

@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface IUserService {
 
-    void addUser(User user);
+   /* void addUser(User user);
 
     int deleteUser(User user);
 
@@ -20,6 +20,6 @@ public interface IUserService {
     User queryUser(User user);
 
 
-    List<User> querUsers(UserExample example);
+    List<User> querUsers(UserExample example);*/
 
 }

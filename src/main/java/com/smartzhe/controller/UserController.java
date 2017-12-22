@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在/users下，可去除
 public class UserController {
-
+/*
     @RequestMapping("/add")
     @ResponseBody
     String home(HttpServletRequest request,
@@ -24,17 +24,17 @@ public class UserController {
         return name;
     }
 
-    @RequestMapping(value="/list",method={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+    @RequestMapping(value = "/list", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
     @ResponseBody
-    public String list(@RequestParam String name) throws InterruptedException{
+    public String list(@RequestParam String name) throws InterruptedException {
         return name.toUpperCase();
     }
 
-    @RequestMapping(value="/list/my",method={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+    @RequestMapping(value = "/list/my", method = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
     @ResponseBody
-    public User mylist(@RequestBody User user) throws InterruptedException{
+    public User mylist(@RequestBody User user) throws InterruptedException {
         return user;
-    }
+    }*/
 
 
 
@@ -77,7 +77,8 @@ public class UserController {
     User user() {
         User user = new User();
         user.setId(151);
-        user = userService.queryUser(user);
+        user = userService.
+        (user);
         return user;
     }
 

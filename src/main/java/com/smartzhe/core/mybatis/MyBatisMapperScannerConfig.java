@@ -24,7 +24,7 @@ public class MyBatisMapperScannerConfig {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
 
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage("com.smartzhe.dao");
+        mapperScannerConfigurer.setBasePackage("com.smartzhe.jifenpay.dao");
 
 
         return mapperScannerConfigurer;
